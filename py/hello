@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+
+import skilstak.colors as c
+import time as t
+
+"""Hello World, Python
+Dan's first bit of code in a while"""
+
+def hello():
+    """first hello world, simple color"""
+    print(c.clear)
+    print(c.rc() + 'hello world' + c.reset)
+
+def multi(message='hello world'):
+    """first hello world, simple color"""
+    while True:
+        print(c.clear + c.multi(message), c.reset)
+        t.sleep(.2)
+
+def color(message='hello world'):
+    """first hello world, simple color"""
+    while True:
+        print(c.rc() + message + c.reset, end=" ")
+
+if __name__ == "__main__":
+    import sys
+
+    if len(sys.argv) == 1:
+        hello()
+    else:
+        #hello(sys.argv[1])
+        color(sys.argv[1])
+        #multi(sys.argv[1])
